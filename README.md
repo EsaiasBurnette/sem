@@ -1,2 +1,1 @@
-This is Esaias Burnette README Document
-- Test CI Workflow 2
+![workflow](https://github.com/EsaiasBurnette/sem/actions/workflows/main.yml/badge.svg)
