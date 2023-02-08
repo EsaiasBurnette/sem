@@ -4,5 +4,5 @@
 
 [![Releases](https://img.shields.io/github/release/EsaiasBurnette/sem/all.svg?style=flat-square)](https://github.com/<github-username>/sem/releases)
 
-https://img.shields.io/github/actions/workflow/status/EsaiasBurnette/sem/main.yml?branch=develop
+![GitHub Workflow Status (with branch)](https://img.shields.io/github/actions/workflow/status/EsaiasBurnette/sem/main.yml?branch=develop)
 
