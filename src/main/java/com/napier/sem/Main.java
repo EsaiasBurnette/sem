@@ -11,7 +11,7 @@ public class Main {
         // Connect to database
         a.connect();
         // Get Employee
-        Employee emp = a.getEmployee(255530);
+        Employee emp = a.getEmployee(476916);
         // Display results
         a.displayEmployee(emp);
 
@@ -21,7 +21,11 @@ public class Main {
         // Test the size of the returned data - should be 240124
         System.out.println(employees.size());
 
+        // Print a list of all salary information
+        a.printSalaries(employees);
+
         // Disconnect from database
         a.disconnect();
     }
+
 }
