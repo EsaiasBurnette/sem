@@ -8,28 +8,22 @@
     <artifactId>seMethods</artifactId>
     <version>0.1.0.4</version>
     <properties>
-        <maven.compiler.source>14</maven.compiler.source>
-        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>forplay-legacy</id>
-            <url>http://forplay.googlecode.com/svn/mavenrepo</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.32</version>
+            <version>8.0.18</version>
         </dependency>
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.2</version>
+            <version>5.1.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -80,7 +74,7 @@
                     <dependency>
                         <groupId>org.junit.jupiter</groupId>
                         <artifactId>junit-jupiter-engine</artifactId>
-                        <version>5.5.2</version>
+                        <version>5.1.0</version>
                     </dependency>
                 </dependencies>
             </plugin>

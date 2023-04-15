@@ -20,7 +20,6 @@ jobs:
       - name: Package and Run docker compose
         run: |
           mvn package -DskipTests
-          mvn clean install -DskipTests
           docker-compose up --abort-on-container-exit
   
 
