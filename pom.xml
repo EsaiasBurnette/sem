@@ -12,6 +12,13 @@
         <maven.compiler.target>14</maven.compiler.target>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>forplay-legacy</id>
+            <url>http://forplay.googlecode.com/svn/mavenrepo</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>mysql</groupId>

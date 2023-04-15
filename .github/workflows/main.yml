@@ -19,7 +19,7 @@ jobs:
         run: mvn -Dtest=com.napier.sem.AppTest test
       - name: Package and Run docker compose
         run: |
-          mvn install -DskipTests
+          mvn package -DskipTests
           docker-compose up --abort-on-container-exit
   
 
