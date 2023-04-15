@@ -25,7 +25,9 @@ public class Main {
         a.printSalaries(employees); */
 
         // print a list of salaries by department
-        a.getDepartment("Sales");
+        Department dep = a.getDepartment();
+        // Display results
+        a.displayDepartment(dep);
 
         // Disconnect from database
         a.disconnect();

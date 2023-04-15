@@ -191,7 +191,7 @@ public class App
         }
     }
 
-    public Department getDepartment(String dept_name)
+    public Department getDepartment()
     {
         try
         {
@@ -199,9 +199,9 @@ public class App
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT dept_no, dept_name "
-                            + "FROM departments, employees "
-                            + "WHERE dept_name = " + dept_name;
+                    "SELECT departments.dept_no, departments.dept_name, employees.first_name, employees.last_name, salaries.salary "
+                            + "FROM departments, employees, salaries "
+                            + "WHERE dept_no = 'd007' " ;
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.
@@ -209,7 +209,7 @@ public class App
             if (rset.next())
             {
                 Department emp = new Department();
-                emp.dept_name = rset.getString("dept_name");
+                emp.dept_no = rset.getString("dept_no");
                 emp.first_name = rset.getString("first_name");
                 emp.last_name = rset.getString("last_name");
                 emp.salary = rset.getInt("salary");
@@ -223,6 +223,20 @@ public class App
             System.out.println(e.getMessage());
             System.out.println("Failed to get employee details");
             return null;
+        }
+    }
+
+    public void displayDepartment(Department dep)
+    {
+        if (dep != null)
+        {
+            System.out.println(
+                    dep.dept_no + " "
+                            + dep.first_name + " "
+                            + dep.last_name + "\n"
+                            + "Salary:" + dep.salary + "\n"
+                            + dep.dept_name + "\n"
+                            + "Manager: " + dep.manager + "\n");
         }
     }
 
