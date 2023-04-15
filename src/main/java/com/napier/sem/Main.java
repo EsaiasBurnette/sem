@@ -11,7 +11,7 @@ public class Main {
         // Connect to database
         a.connect();
         // Get Employee
-        Employee emp = a.getEmployee(476916);
+      /*  Employee emp = a.getEmployee(476916);
         // Display results
         a.displayEmployee(emp);
 
@@ -22,7 +22,10 @@ public class Main {
         System.out.println(employees.size());
 
         // Print a list of all salary information
-        a.printSalaries(employees);
+        a.printSalaries(employees); */
+
+        // print a list of salaries by department
+        a.getDepartment("Sales");
 
         // Disconnect from database
         a.disconnect();

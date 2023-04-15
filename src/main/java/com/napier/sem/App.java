@@ -144,11 +144,6 @@ public class App
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    /*SQL statement for All Salaries
-                      "SELECT employees.emp_no, employees.first_name, employees.last_name, salaries.salary "
-                            + "FROM employees, salaries "
-                            + "WHERE employees.emp_no = salaries.emp_no AND salaries.to_date = '9999-01-01' "
-                            + "ORDER BY employees.emp_no ASC"; */
 
                     // SQL statement for Salaries by Role
                     "SELECT employees.emp_no, employees.first_name, employees.last_name, salaries.salary "
@@ -204,9 +199,9 @@ public class App
             Statement stmt = con.createStatement();
             // Create string for SQL statement
             String strSelect =
-                    "SELECT emp_no, first_name, last_name "
-                            + "FROM employees "
-                            + "WHERE emp_no = " + dept_name;
+                    "SELECT dept_no, dept_name "
+                            + "FROM departments, employees "
+                            + "WHERE dept_name = " + dept_name;
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.
@@ -217,6 +212,7 @@ public class App
                 emp.dept_name = rset.getString("dept_name");
                 emp.first_name = rset.getString("first_name");
                 emp.last_name = rset.getString("last_name");
+                emp.salary = rset.getInt("salary");
                 return emp;
             }
             else
@@ -251,7 +247,7 @@ public class App
             ArrayList<Employee> department = new ArrayList<Employee>();
             while (rset.next())
             {
-                Department dep= new Department();
+                Employee dep= new Employee();
                 dep.emp_no = rset.getInt("employees.emp_no");
                 dep.first_name = rset.getString("employees.first_name");
                 dep.last_name = rset.getString("employees.last_name");

@@ -3,7 +3,7 @@ package com.napier.sem;
 /**
  * Represents a Department
  */
-public class Department extends Employee {
+public class Department {
     /**
      * Employee number
      */
