@@ -191,7 +191,7 @@ public class App
         }
     }
 
-    public Department getDepartment()
+    public Department getDepartment(String dept_name)
     {
         try
         {
@@ -201,7 +201,7 @@ public class App
             String strSelect =
                     "SELECT departments.dept_no, departments.dept_name, employees.first_name, employees.last_name, salaries.salary "
                             + "FROM departments, employees, salaries "
-                            + "WHERE dept_no = 'd007' " ;
+                            + "WHERE dept_name = " + dept_name ;
             // Execute SQL statement
             ResultSet rset = stmt.executeQuery(strSelect);
             // Return new employee if valid.
@@ -226,19 +226,6 @@ public class App
         }
     }
 
-    public void displayDepartment(Department dep)
-    {
-        if (dep != null)
-        {
-            System.out.println(
-                    dep.dept_no + " "
-                            + dep.first_name + " "
-                            + dep.last_name + "\n"
-                            + "Salary:" + dep.salary + "\n"
-                            + dep.dept_name + "\n"
-                            + "Manager: " + dep.manager + "\n");
-        }
-    }
 
         public ArrayList<Employee> getSalariesByDepartment(Department dept)
     {

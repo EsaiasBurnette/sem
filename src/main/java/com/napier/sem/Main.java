@@ -24,10 +24,11 @@ public class Main {
         // Print a list of all salary information
         a.printSalaries(employees); */
 
-        // print a list of salaries by department
-        Department dep = a.getDepartment();
-        // Display results
-        a.displayDepartment(dep);
+        Department dept = a.getDepartment("Development");
+        ArrayList<Employee> employees = a.getSalariesByDepartment(dept);
+
+        // Print salary report
+        a.printSalaries(employees);
 
         // Disconnect from database
         a.disconnect();
