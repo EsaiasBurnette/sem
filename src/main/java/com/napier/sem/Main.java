@@ -8,8 +8,12 @@ public class Main {
         // Create new Application
         App a = new App();
 
-        // Connect to database
-        a.connect();
+        if(args.length < 1){
+            a.connect("localhost:33060", 30000);
+        }else{
+            a.connect(args[0], Integer.parseInt(args[1]));
+        }
+
         // Get Employee
         Employee emp = a.getEmployee(476916);
         // Display results
